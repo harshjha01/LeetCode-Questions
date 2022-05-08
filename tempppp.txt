@@ -1,0 +1,31 @@
+mysql> select * from personal_details;
++----------------+--------------+------------------+----------------+---------+-----------+
+| name           | enroll       | father_name      | mother_name    | adhar   | address   |
++----------------+--------------+------------------+----------------+---------+-----------+
+| harsh jha      | a80105220031 | ashok jha        | pinki jha      |  123456 | bihar   |
+| vaibhav        | a80105220030 | anil gupta       | devika gupta   |  213654 | sai vihar |
+| ankit          | a80105220029 | aashutosh pandey | anjali pandey  |  254692 | birgaow   |
+| harsh sharma   | a80105220069 | aniket sharma    | ayushi sharma  |  896547 | raipur    |
+| paritosh yadav | a80105220099 | aakash yadav     | devika yadav   | 6324789 | bilaspur  |
++----------------+--------------+------------------+----------------+---------+-----------+
+5 rows in set (0.04 sec)
+
+mysql> alter table personal_details add phone_no int(20);
+Query OK, 0 rows affected, 1 warning (0.06 sec)
+Records: 0  Duplicates: 0  Warnings: 1
+
+mysql> insert into Personal_details values("vaibhav","a80105220031","anil gupta","devika gupta",213654,"sai vihar",123456);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from personal_details;
++----------------+--------------+------------------+----------------+---------+-----------+----------+
+| name           | enroll       | father_name      | mother_name    | adhar   | address   | phone_no |
++----------------+--------------+------------------+----------------+---------+-----------+----------+
+| harsh jha      | a80105220036 | ashok jha        | pinki jha      |  123456 | siltara   |     NULL |
+| vaibhav        | a80105220031 | anil gupta       | devika gupta   |  213654 | sai vihar |     NULL |
+| ankit          | a80105220029 | aashutosh pandey | anjali pandey  |  254692 | birgaow   |     NULL |
+| harsh sharma   | a80105220069 | aniket sharma    | ayushi sharma  |  896547 | raipur    |     NULL |
+| paritosh yadav | a80105220099 | aakash yadav     | devika yadav   | 6324789 | bilaspur  |     NULL |
+| vaibhav        | a80105220031 | anil gupta       | devika gupta   |  213654 | sai vihar |   123456 |
++----------------+--------------+------------------+----------------+---------+-----------+----------+
+6 rows in set (0.00 sec)
